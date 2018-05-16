@@ -11,10 +11,10 @@ namespace save3edit
     {
         public static bool isValid(string path) {
             long length = new System.IO.FileInfo(path).Length;
-            if (length > 9000)
+            if (length != 8192)
             {
                 MessageBox.Show("Invalid file");
-                return false;   
+                return false;
             }
             return true;
         }

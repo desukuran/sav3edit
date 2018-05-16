@@ -34,7 +34,14 @@ namespace save3edit
                 save.data = System.IO.File.ReadAllBytes(openFileDialog1.FileName);
                 MessageBox.Show("File loaded!");
 
+                //Populate items
+                save.populateItems();
 
+                for (int i=0; i< 0xFF; i++)
+                {
+                    dataGridView1.Rows.Add(Items.ItemHex2Name(save.itemTypes[i]), save.itemCount[i].ToString());
+                    
+                }
             }
         }
         SaveFile save = new SaveFile();
